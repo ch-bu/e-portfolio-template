@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ch-bu/e-portfolio-template.git"
+    "url": "git+https://github.com/ch-bu/e-portfolio-template-for-student-teachers.git"
   },
   "author": "Christian Burkhart",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ch-bu/e-portfolio-template/issues"
+    "url": "https://github.com/ch-bu/e-portfolio-template-for-student-teachers/issues"
   },
-  "homepage": "https://github.com/ch-bu/e-portfolio-template#readme",
+  "homepage": "https://github.com/ch-bu/ee-portfolio-template-for-student-teachers#readme",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.10",

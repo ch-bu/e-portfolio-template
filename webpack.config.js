@@ -3,19 +3,12 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './app/js/main.jsx',
+    app: './app/themes/freiburg-portfolio/static/js/main.js',
   },
   output: {
-    path: path.join(__dirname, 'dist/js'),
+    path: path.join(__dirname, '/app/themes/freiburg-portfolio/static/js'),
     filename: '[name].min.js',
   },
-
-  // resolve: {
-  //   alias: {
-  //     jquery: "jquery/src/jquery",
-  //     materialize: "materialize-css/dist/js/materialize"
-  //   },
-  // },
 
   module: {
     rules: [

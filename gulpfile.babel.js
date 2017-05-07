@@ -36,40 +36,17 @@ gulp.task('styles', () => {
   ];
 
   // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src(['app/scss/*.scss'])
-  .pipe(newer('dist/css'))
-  .pipe(sourcemaps.init())
-  .pipe(sass({precision: 10}).on('error', sass.logError))
-  .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-  // // Concatenate and minify styles
-  .pipe(cssnano())
-  .pipe(size({title: 'styles'}))
-  .pipe(sourcemaps.write('./'))
-  .pipe(rename('styles.min.css'))
-  .pipe(gulp.dest('dist/css'));
-});
-
-/**
- * Scan your HTML for assets & optimize them
- */
-gulp.task('html', () => {
-  return gulp.src('app/*.html')
-    // Minify any HTML
-    .pipe(htmlmin({
-      removeComments: true,
-      collapseWhitespace: true,
-      collapseBooleanAttributes: true,
-      removeAttributeQuotes: false,
-      removeRedundantAttributes: true,
-      removeEmptyAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true,
-      // In order for the browser to reload
-      // the body tag must be present
-      // https://github.com/BrowserSync/browser-sync#requirements
-      removeOptionalTags: false
-    }))
-    .pipe(gulp.dest('dist'));
+  return gulp.src(['app/themes/freiburg-portfolio/static/scss/*.scss'])
+    .pipe(newer('dist/css'))
+    .pipe(sourcemaps.init())
+    .pipe(sass({precision: 10}).on('error', sass.logError))
+    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    // // Concatenate and minify styles
+    .pipe(cssnano())
+    .pipe(size({title: 'styles'}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(rename('app.min.css'))
+    .pipe(gulp.dest('app/themes/freiburg-portfolio/static/css'));
 });
 
 /**
@@ -79,18 +56,9 @@ gulp.task('webpack', shell.task([
   'webpack']));
 
 // Watch files for changes
-gulp.task('serve', ['styles', 'webpack'], () => {
-  browserSync({
-      logPrefix: 'Timetracker',
-      notify: true,
-      port: 8082,
-      server: {
-        baseDir: 'dist'
-      }
-      // proxy: "localhost:8080",
-  });
+gulp.task('watch', ['styles', 'webpack'], () => {
 
-  gulp.watch(['app/scss/*.scss'], ['styles', reload]);
-  gulp.watch(['app/js/**/*.jsx'], ['webpack', reload]);
-  gulp.watch(['app/*.html'], ['html', reload]);
+  gulp.watch(['app/themes/freiburg-portfolio/static/scss/*.scss'], ['styles']);
+  gulp.watch(['app/themes/freiburg-portfolio/static/js/main*.js',
+              'app/themes/freiburg-portfolio/static/js/**/*.jsx'], ['webpack']);
 });

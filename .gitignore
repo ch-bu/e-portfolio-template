@@ -1,2 +1,3 @@
 node_modules/
-dist/
+app/themes/freiburg-portfolio/static/css
+app/themes/freiburg-portfolio/static/js/app.min.js
