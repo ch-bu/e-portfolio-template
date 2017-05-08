@@ -13,15 +13,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)/,
         loader: 'babel-loader',
-        include: path.resolve(__dirname, 'app/js'),
-        exclude: path.resolve(__dirname, 'node_modules'),
+        include: path.resolve(__dirname, '/app/themes/freiburg-portfolio/static/js'),
+        exclude: path.resolve(__dirname, '/node_modules'),
         options: {
           babelrc: false,
           presets: [
             ['es2015', { modules: false }],
             'react',
+            // 'es2015', 'react'
           ]
         }
       }

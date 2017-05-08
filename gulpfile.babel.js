@@ -36,7 +36,7 @@ gulp.task('styles', () => {
   ];
 
   // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src(['app/themes/freiburg-portfolio/static/scss/*.scss'])
+  return gulp.src(['app/themes/freiburg-portfolio/static/scss/app.scss'])
     .pipe(newer('dist/css'))
     .pipe(sourcemaps.init())
     .pipe(sass({precision: 10}).on('error', sass.logError))
