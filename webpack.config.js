@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './app/themes/freiburg-portfolio/static/js/main.js',
+    app: './app/themes/freiburg-portfolio/static/js/app.jsx',
   },
   output: {
     path: path.join(__dirname, '/app/themes/freiburg-portfolio/static/js'),
@@ -15,8 +15,8 @@ module.exports = {
       {
         test: /\.(js|jsx)/,
         loader: 'babel-loader',
-        include: path.resolve(__dirname, '/app/themes/freiburg-portfolio/static/js'),
-        exclude: path.resolve(__dirname, '/node_modules'),
+        include: path.resolve(__dirname, 'app/themes/freiburg-portfolio/static/js'),
+        exclude: path.resolve(__dirname, 'node_modules'),
         options: {
           babelrc: false,
           presets: [
