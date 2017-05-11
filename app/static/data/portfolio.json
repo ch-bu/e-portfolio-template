@@ -1,0 +1,57 @@
+{
+  "about": {
+    "matriculation-number": 87343443,
+    "first-name": "Hans",
+    "last-name": "Zimmer",
+    "subject-first": "Englisch",
+    "subject-second": "Deutsch",
+    "subject-third": "Mathematik"
+  },
+
+  "portfolio": [
+    {
+      "id": 4,
+      "name": "Einführung in die Bildungswissenschaft",
+      "semester": "2017 SS",
+      "teacher": "Prof. Dr. Matthias Nückles",
+      "link": "http://testlink.de",
+      "field": "Bildungswissenschaft",
+      "portfolio": [
+        {
+          "id": 132,
+          "date": "2016-04-06T16:11:58+05:30",
+          "parent-course": 5,
+          "title": "Portfolioaufgabe 1",
+          "description": "Wie ist das Arbeitsgedächtnis aufgebaut",
+          "artifact": "Lorem ipsum"
+        },
+        {
+          "id": 143,
+          "date": "2016-04-26T16:11:58+05:30",
+          "parent-course": 5,
+          "title": "Portfolioaufgabe 1",
+          "description": "Was ist eine Chore Practice?",
+          "artifact": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "semester": "2017 WS",
+      "teacher": "Katja Zaki",
+      "link": "http://testlink.de",
+      "field": "Fachdidaktik",
+      "portfolio": [
+        {
+          "id": 132,
+          "date": "2016-02-06T16:11:58+05:30",
+          "parent-course": 4,
+          "title": "Portfolioaufgabe 1",
+          "description": "Was ist Sprache?",
+          "artifact": "Lorem ipsum"
+        }
+      ]
+    }
+  ]
+}

@@ -2,3 +2,6 @@ node_modules/
 app/themes/freiburg-portfolio/static/css
 app/themes/freiburg-portfolio/static/js/app.min.js
 content/
+
+e-portfolio.sublime-project
+e-portfolio.sublime-workspace
