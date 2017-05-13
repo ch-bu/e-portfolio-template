@@ -21,7 +21,13 @@
   d3.json('data/portfolio.json', function(error, data) {
     // Get portfolio data
     var portfolio = data.portfolio.map(function(course) {
-      return course.portfolio;
+      return course.portfolio.map(function(artifact) {
+        artifact['semester'] = course.semester;
+        artifact['course'] = course.name;
+        artifact['course-id'] = course.id;
+        artifact['field'] = course.field;
+        return artifact;
+      });
     });
 
     // Flatten array
