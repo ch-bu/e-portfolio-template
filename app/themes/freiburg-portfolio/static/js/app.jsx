@@ -34,8 +34,20 @@
     // http://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays-in-javascript
     portfolio = [].concat.apply([], portfolio);
 
-    console.log(portfolio);
+    // We want to display each artifact on a scale that
+    // is defined in semesters. Therefore, we need
+    // an ordinal scale
+    var semesterScale = d3.scaleBand()
+      .domain(Array.from(new Set(portfolio.map(function(artifact) {
+        return artifact.semester;
+      }))))
+      .range([0, (width - margin.left - margin.right)]);
 
+    // Add x axis that will display the semesters
+    var xAxis = d3.axisTop(semesterScale);
+    g.append('g')
+      .attr('class', 'x-axis')
+      .call(xAxis);
 
   });
 
