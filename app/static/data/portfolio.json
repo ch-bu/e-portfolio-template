@@ -50,12 +50,20 @@
           "title": "Portfolioaufgabe 1",
           "description": "Was ist eine Chore Practice?",
           "artifact": "Lorem ipsum"
+        },
+        {
+          "id": 183,
+          "date": "2016-08-30T16:11:58+05:30",
+          "parent-course": 5,
+          "title": "Portfolioaufgabe 1",
+          "description": "Was ist eine Chore Practice?",
+          "artifact": "Lorem ipsum"
         }
       ]
     },
     {
       "id": 5,
-      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "name": "Einführung die Anglistik",
       "semester": "WS 2017/18",
       "teacher": "Katja Zaki",
       "link": "http://testlink.de",
@@ -73,7 +81,7 @@
     },
     {
       "id": 3,
-      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "name": "Einführung in die Kunstgeschichte",
       "semester": "WS 2019/20",
       "teacher": "Max Mustermann",
       "link": "http://testlink.de",
@@ -91,7 +99,7 @@
     },
     {
       "id": 1,
-      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "name": "Proseminar The English Noun Phrase",
       "semester": "WS 2020/21",
       "teacher": "Max Mustermann",
       "link": "http://testlink.de",

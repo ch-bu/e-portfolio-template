@@ -5,6 +5,7 @@
   const height = 700;
   const margin = {top: 50, bottom: 100, left: 50, right: 50};
   const dateFormat = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ");
+  var courseY = 50; // Y value for a specific course
 
   // Set initial values of svg element that
   // holds the data visualization
@@ -66,23 +67,44 @@
       .range([0, height - margin.top - margin.bottom]);
     // ************************************************************************
 
-
-    // **************** Add artifacts as dots to svg **************************
-    var artifacts = g.selectAll('circle')
-      .data(portfolio)
-      .enter().append('circle')
-      .attr('class', 'artifact')
-      .attr('cx', (d) => {
-        return semesterScale(d.semester) + semesterScale.bandwidth() / 2;
-      })
-      .attr('cy', (d) => {
-        return timeScale(new Date(d.date)) + 30;
-      })
-      .attr('r', 5);
+    // **************** Add artifacts to svg **************************
+    // var artifacts = g.selectAll('circle')
+    //   .data(portfolio)
+    //   .enter().append('circle')
+    //   .attr('class', 'artifact')
+    //   .attr('cx', (d) => {
+    //     return semesterScale(d.semester) + semesterScale.bandwidth() / 2;
+    //   })
+    //   .attr('cy', (d) => {
+    //     return timeScale(new Date(d.date)) + 30;
+    //   })
+    //   .attr('r', 5);
     // ************************************************************************
 
+    // **************** Add each course as a unique g element *****************
+    var courseElement = g.selectAll('.course')
+      .data(data.portfolio)
+      .enter().append('g')
+      .attr('class', 'course')
+      .attr('id', (d) => {
+        return 'course-' + d.name;
+      })
+      .attr('transform', (d) => {
+        let xValue = semesterScale(d.semester) + semesterScale.bandwidth() / 2;
+        let yValue = courseY;
+        courseY = courseY + (50 * d.portfolio.length);
+        return 'translate(' + xValue + ',' + yValue + ')';
+      });
 
-    console.log(semesterScale.bandwidth());
+    // Append line to course
+    courseElement.append('line')
+      .attr('x1', 0)
+      .attr('x2', 0)
+      .attr('y1', 5)
+      .attr('y2', (d) => {
+        return 50 * d.portfolio.length - 5;
+      })
+      .style('stroke', '#ccc');
 
 
 
