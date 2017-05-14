@@ -67,27 +67,13 @@
       .range([0, height - margin.top - margin.bottom]);
     // ************************************************************************
 
-    // **************** Add artifacts to svg **************************
-    // var artifacts = g.selectAll('circle')
-    //   .data(portfolio)
-    //   .enter().append('circle')
-    //   .attr('class', 'artifact')
-    //   .attr('cx', (d) => {
-    //     return semesterScale(d.semester) + semesterScale.bandwidth() / 2;
-    //   })
-    //   .attr('cy', (d) => {
-    //     return timeScale(new Date(d.date)) + 30;
-    //   })
-    //   .attr('r', 5);
-    // ************************************************************************
-
     // **************** Add each course as a unique g element *****************
     var courseElement = g.selectAll('.course')
       .data(data.portfolio)
       .enter().append('g')
       .attr('class', 'course')
       .attr('id', (d) => {
-        return 'course-' + d.name;
+        return 'course-' + d.id;
       })
       .attr('transform', (d) => {
         let xValue = semesterScale(d.semester) + semesterScale.bandwidth() / 2;
@@ -105,8 +91,29 @@
         return 50 * d.portfolio.length - 5;
       })
       .style('stroke', '#ccc');
+    // ************************************************************************
 
+    // ******************** Add every artifact to line ************************
+    courseElement.each((d) => {
+      // Find course g element
+      let course = svg.select('#course-' + d.id);
 
+      // Every course has to wander a little
+      // down the line
+      var wanderDown = 25;
+
+      // Add circles for each artifact to course
+      course.selectAll('circle')
+        .data(d.portfolio)
+        .enter().append('circle')
+        .attr('cy', (d) => {
+          let yValue = wanderDown;
+          wanderDown = wanderDown + 50;
+          return yValue;
+        })
+        .attr('cx', 0)
+        .attr('r', 5);
+    });
 
   });
 
