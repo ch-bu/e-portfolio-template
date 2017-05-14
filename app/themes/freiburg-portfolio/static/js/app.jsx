@@ -61,6 +61,15 @@
     g.append('g')
       .attr('class', 'x-axis')
       .call(xAxis);
+
+    var xAxisBottom = d3.axisBottom(semesterScale);
+    g.append('g')
+      .attr('class', 'x-axis')
+      .attr('transform', 'translate(0,' + (height - margin.top - margin.bottom + 30) + ')')
+      .call(xAxis)
+      .selectAll('line')
+        .attr('y2', -32)
+        .attr('y1', -25);
     // ************************************************************************
 
 
@@ -83,11 +92,11 @@
     courseElement.append('line')
       .attr('x1', 0)
       .attr('x2', 0)
-      .attr('y1', 5)
+      .attr('y1', -5)
       .attr('y2', (d) => {
-        return artifactDistance * d.portfolio.length - 5;
+        return artifactDistance * d.portfolio.length + 5;
       })
-      .style('stroke', '#ccc');
+      .style('stroke', '#666666');
     // ************************************************************************
 
     // ******************** Add every artifact to line ************************
