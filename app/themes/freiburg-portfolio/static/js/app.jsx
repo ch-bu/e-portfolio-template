@@ -3,9 +3,9 @@
   // Init variables
   const width = d3.select('#portfolio-container').node().clientWidth;
   const height = 700;
-  const margin = {top: 50, bottom: 100, left: 50, right: 50};
+  const margin = {top: 50, bottom: 100, left: 50, right: 200};
   const dateFormat = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ");
-  var courseY = 50; // Y value for a specific course
+  var courseY = 40; // Y value for a specific course
   // This value indicates the y distance of artifacts
   const artifactDistance = 30;
   const circleR = 6;
@@ -92,11 +92,21 @@
     courseElement.append('line')
       .attr('x1', 0)
       .attr('x2', 0)
-      .attr('y1', -5)
+      .attr('y1', -12)
       .attr('y2', (d) => {
-        return artifactDistance * d.portfolio.length + 5;
+        return artifactDistance * d.portfolio.length + 12;
       })
       .style('stroke', '#666666');
+
+    // Append name of course to course element
+    courseElement.append('text')
+      .text(d => {
+        return d.name;
+      })
+      .attr('dx', 5)
+      .attr('dy', 0)
+      .style('fill', '#000');
+
     // ************************************************************************
 
     // ******************** Add every artifact to line ************************
