@@ -7,7 +7,8 @@
   const dateFormat = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ");
   var courseY = 50; // Y value for a specific course
   // This value indicates the y distance of artifacts
-  var artifactDistance = 40;
+  const artifactDistance = 30;
+  const circleR = 6;
 
   // Set initial values of svg element that
   // holds the data visualization
@@ -40,6 +41,10 @@
     portfolio = [].concat.apply([], portfolio);
     // ***********************************************************************
 
+    // ******************* Create scale for field colors *********************
+    var fieldColors = d3.scaleOrdinal()
+      .domain(['Fachdidaktik', 'Fachwissenschaft', 'Bildungswissenschaft'])
+      .range(d3.schemeCategory10);
 
     // ******************* Create x axis *************************************
     // We want to display each artifact on a scale that
@@ -58,16 +63,6 @@
       .call(xAxis);
     // ************************************************************************
 
-
-    // ****************** Create y axis ***************************************
-    // We will display time on two axises. On the y axis we show a more
-    // fine grained display of when an artifact has been handed in.
-    var timeScale = d3.scaleLinear()
-      .domain(d3.extent(portfolio.map(function(artifact) {
-        return new Date(artifact.date);
-      })))
-      .range([0, height - margin.top - margin.bottom]);
-    // ************************************************************************
 
     // **************** Add each course as a unique g element *****************
     var courseElement = g.selectAll('.course')
@@ -104,18 +99,58 @@
       // down the line
       var wanderDown = artifactDistance / 2;
 
-      // Add circles for each artifact to course
-      course.selectAll('circle')
+      // Add g for each artifact to course
+      course.selectAll('g')
         .data(d.portfolio)
-        .enter().append('circle')
-        .attr('cy', (d) => {
+        .enter().append('g')
+        .attr('class', 'artifact')
+        .attr('id', (d) => {
+          return 'artifact-' + d.id;
+        })
+        .attr('transform', d => {
           let yValue = wanderDown;
           wanderDown = wanderDown + artifactDistance;
-          return yValue;
-        })
-        .attr('cx', 0)
-        .attr('r', 5);
+          return 'translate(0' + ',' + yValue + ')';
+        });
     });
+
+    // Add circles to each artifact indicating the
+    // link that each artifact makes
+    g.selectAll('.artifact').each(d => {
+      // Get artifact
+      let artifact = g.select('#artifact-' + d.id);
+
+      // Find parent course
+      let parent = data.portfolio.filter(parent => {
+        return parent.id == d['parent-course'];
+      })[0];
+
+      // There is no parent element
+      // this artifact stands on its own
+      if (!parent) {
+        artifact.append('circle')
+          .attr('cx', 0)
+          .attr('cy', 0)
+          .attr('r', circleR)
+          .style('fill', fieldColors(d.field));
+      } else {
+        // Add parent circle
+        artifact.append('circle')
+          .attr('cx', 3)
+          .attr('cy', 0)
+          .attr('r', circleR)
+          .style('fill', fieldColors(parent.field));
+
+        // Add artifact circle
+        artifact.append('circle')
+          .attr('cx', -3)
+          .attr('cy', 0)
+          .attr('r', circleR)
+          .style('fill', fieldColors(d.field));
+      }
+    });
+
+
 
   });
 

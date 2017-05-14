@@ -10,25 +10,59 @@
 
   "portfolio": [
       {
-      "id": 1,
-      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
-      "semester": "SS 2016",
-      "teacher": "Max Mustermann",
-      "link": "http://testlink.de",
-      "field": "",
-      "portfolio": [
-        {
-          "id": 135,
-          "date": "2016-05-06T16:11:58+05:30",
-          "parent-course": 4,
-          "title": "Reflexion",
-          "description": "Was macht einen guten Lehrer aus?",
-          "artifact": "Lorem ipsum"
-        }
-      ]
-    },
+        "id": 1,
+        "name": "Einführung in Bildungswissenschaft",
+        "semester": "WS 2016/17",
+        "teacher": "Max Mustermann",
+        "link": "http://testlink.de",
+        "field": "Bildungswissenschaft",
+        "portfolio": [
+          {
+            "id": 135,
+            "date": "2016-05-06T16:11:58+05:30",
+            "parent-course": null,
+            "title": "Reflexion",
+            "description": "Was macht einen guten Lehrer aus?",
+            "artifact": "Lorem ipsum"
+          },
+          {
+            "id": 136,
+            "date": "2016-05-06T16:11:58+05:30",
+            "parent-course": 4,
+            "title": "Reflexion",
+            "description": "Was macht einen guten Lehrer aus?",
+            "artifact": "Lorem ipsum"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "name": "Orientierungspraktikum",
+        "semester": "WS 2016/17",
+        "teacher": "Max Mustermann",
+        "link": "http://testlink.de",
+        "field": null,
+        "portfolio": [
+          {
+            "id": 138,
+            "date": "2016-05-06T16:11:58+05:30",
+            "parent-course": 1,
+            "title": "Reflexion",
+            "description": "Was macht einen guten Lehrer aus?",
+            "artifact": "Lorem ipsum"
+          },
+          {
+            "id": 206,
+            "date": "2016-05-06T16:11:58+05:30",
+            "parent-course": 1,
+            "title": "Reflexion",
+            "description": "Was macht einen guten Lehrer aus?",
+            "artifact": "Lorem ipsum"
+          }
+        ]
+      },
     {
-      "id": 4,
+      "id": 2,
       "name": "Einführung in die Bildungswissenschaft",
       "semester": "SS 2017",
       "teacher": "Prof. Dr. Matthias Nückles",
@@ -62,7 +96,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "Einführung die Anglistik",
       "semester": "WS 2017/18",
       "teacher": "Katja Zaki",
@@ -70,7 +104,7 @@
       "field": "Fachdidaktik",
       "portfolio": [
         {
-          "id": 132,
+          "id": 142,
           "date": "2017-12-06T16:11:58+05:30",
           "parent-course": 4,
           "title": "Portfolioaufgabe 1",
@@ -80,17 +114,17 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Einführung in die Kunstgeschichte",
       "semester": "WS 2019/20",
       "teacher": "Max Mustermann",
       "link": "http://testlink.de",
-      "field": "",
+      "field": "Fachdidaktik",
       "portfolio": [
         {
-          "id": 135,
+          "id": 198,
           "date": "2019-12-06T16:11:58+05:30",
-          "parent-course": 4,
+          "parent-course": 2,
           "title": "Reflexion",
           "description": "Was macht einen guten Lehrer aus?",
           "artifact": "Lorem ipsum"
@@ -98,17 +132,17 @@
       ]
     },
     {
-      "id": 1,
+      "id": 5,
       "name": "Proseminar The English Noun Phrase",
       "semester": "WS 2020/21",
       "teacher": "Max Mustermann",
       "link": "http://testlink.de",
-      "field": "",
+      "field": "Fachdidaktik",
       "portfolio": [
         {
-          "id": 135,
+          "id": 145,
           "date": "2020-11-06T16:11:58+05:30",
-          "parent-course": 4,
+          "parent-course": 2,
           "title": "Reflexion",
           "description": "Was macht einen guten Lehrer aus?",
           "artifact": "Lorem ipsum"
