@@ -73,16 +73,16 @@
       .enter().append('circle')
       .attr('class', 'artifact')
       .attr('cx', (d) => {
-        return semesterScale(d.semester);
+        return semesterScale(d.semester) + semesterScale.bandwidth() / 2;
       })
       .attr('cy', (d) => {
-        return timeScale(new Date(d.date));
+        return timeScale(new Date(d.date)) + 30;
       })
       .attr('r', 5);
     // ************************************************************************
 
 
-    console.log(d3.extent([2, 3, 5]));
+    console.log(semesterScale.bandwidth());
 
 
 

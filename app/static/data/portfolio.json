@@ -9,17 +9,35 @@
   },
 
   "portfolio": [
+      {
+      "id": 1,
+      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "semester": "SS 2016",
+      "teacher": "Max Mustermann",
+      "link": "http://testlink.de",
+      "field": "",
+      "portfolio": [
+        {
+          "id": 135,
+          "date": "2016-05-06T16:11:58+05:30",
+          "parent-course": 4,
+          "title": "Reflexion",
+          "description": "Was macht einen guten Lehrer aus?",
+          "artifact": "Lorem ipsum"
+        }
+      ]
+    },
     {
       "id": 4,
       "name": "Einführung in die Bildungswissenschaft",
-      "semester": "2017 SS",
+      "semester": "SS 2017",
       "teacher": "Prof. Dr. Matthias Nückles",
       "link": "http://testlink.de",
       "field": "Bildungswissenschaft",
       "portfolio": [
         {
           "id": 132,
-          "date": "2016-04-06T16:11:58+05:30",
+          "date": "2017-04-06T16:11:58+05:30",
           "parent-course": 5,
           "title": "Portfolioaufgabe 1",
           "description": "Wie ist das Arbeitsgedächtnis aufgebaut",
@@ -27,7 +45,7 @@
         },
         {
           "id": 143,
-          "date": "2016-04-26T16:11:58+05:30",
+          "date": "2016-07-26T16:11:58+05:30",
           "parent-course": 5,
           "title": "Portfolioaufgabe 1",
           "description": "Was ist eine Chore Practice?",
@@ -38,17 +56,53 @@
     {
       "id": 5,
       "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
-      "semester": "2017 WS",
+      "semester": "WS 2017/18",
       "teacher": "Katja Zaki",
       "link": "http://testlink.de",
       "field": "Fachdidaktik",
       "portfolio": [
         {
           "id": 132,
-          "date": "2016-02-06T16:11:58+05:30",
+          "date": "2017-12-06T16:11:58+05:30",
           "parent-course": 4,
           "title": "Portfolioaufgabe 1",
           "description": "Was ist Sprache?",
+          "artifact": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "semester": "WS 2019/20",
+      "teacher": "Max Mustermann",
+      "link": "http://testlink.de",
+      "field": "",
+      "portfolio": [
+        {
+          "id": 135,
+          "date": "2019-12-06T16:11:58+05:30",
+          "parent-course": 4,
+          "title": "Reflexion",
+          "description": "Was macht einen guten Lehrer aus?",
+          "artifact": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Einführung in die Sprachwissenschaft der Romanischen Sprachen",
+      "semester": "WS 2020/21",
+      "teacher": "Max Mustermann",
+      "link": "http://testlink.de",
+      "field": "",
+      "portfolio": [
+        {
+          "id": 135,
+          "date": "2020-11-06T16:11:58+05:30",
+          "parent-course": 4,
+          "title": "Reflexion",
+          "description": "Was macht einen guten Lehrer aus?",
           "artifact": "Lorem ipsum"
         }
       ]
