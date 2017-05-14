@@ -6,6 +6,8 @@
   const margin = {top: 50, bottom: 100, left: 50, right: 50};
   const dateFormat = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ");
   var courseY = 50; // Y value for a specific course
+  // This value indicates the y distance of artifacts
+  var artifactDistance = 40;
 
   // Set initial values of svg element that
   // holds the data visualization
@@ -88,7 +90,7 @@
       .attr('x2', 0)
       .attr('y1', 5)
       .attr('y2', (d) => {
-        return 50 * d.portfolio.length - 5;
+        return artifactDistance * d.portfolio.length - 5;
       })
       .style('stroke', '#ccc');
     // ************************************************************************
@@ -100,7 +102,7 @@
 
       // Every course has to wander a little
       // down the line
-      var wanderDown = 25;
+      var wanderDown = artifactDistance / 2;
 
       // Add circles for each artifact to course
       course.selectAll('circle')
@@ -108,7 +110,7 @@
         .enter().append('circle')
         .attr('cy', (d) => {
           let yValue = wanderDown;
-          wanderDown = wanderDown + 50;
+          wanderDown = wanderDown + artifactDistance;
           return yValue;
         })
         .attr('cx', 0)
